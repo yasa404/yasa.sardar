@@ -1,0 +1,21 @@
+{
+    "title": "Yasa Sardar",
+    "header_welcome": "Welcome to Yasa Sardar's Website",
+    "name": "Yasa Sardar",
+    "subtitle": "Software Engineer & IT Specialist - CEO of Parzand Software Company",
+    "nav_about": "About me",
+    "nav_skills": "My Skills",
+    "nav_projects": "My Projects",
+    "nav_contact": "Contact Me",
+    "about_title": "About Me",
+    "about_text": "My name is Yasa — My name is Yasa — a software engineer and IT specialist with extensive experience across multiple industries. I’ve had the opportunity to work with a range of companies, solving real-world challenges through technology. I’m also currently pursuing my degree while leading my own software company, <strong>Parzand</strong>. We specialize in building tailored software solutions for businesses of all sizes. If you're looking for a system to streamline your work, we’re ready to deliver.",
+    "skill_python": "Python",
+    "skill_html": "HTML / CSS",
+    "skill_sql": "SQL",
+    "skill_office": "Microsoft Office (Word, PowerPoint, Access, Excel)",
+    "projects_title": "My Projects",
+    "proj1": "Project 1: Web Application",
+    "proj2": "Project 2: Accounting System",
+    "proj3": "Project 3: Health System",
+    "contact_title": "Contact Me"
+}
