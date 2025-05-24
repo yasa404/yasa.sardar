@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parzand - General Trading, IT, Cleaning, Food</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rochester&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #ffffff, #00eeff, #ffffff);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(14deg, #1ee9f7, #0245ff, #00f7ff);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        header h1 {
+            font-family: 'Rochester';
+            font-size: 5rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+ 
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        nav {
+            background-color: #fff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        nav a {
+            color: #333;
+            margin: 0 15px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #2575fc;
+            transform: translateY(-3px);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 50px;
+            margin-bottom: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2575fc;
+        }
+
+        .service, .product {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .service img, .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .service h3, .product h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .service p, .product p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #2575fc;
+            color: white;
+            padding: 12px 50px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0043ec;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .contact-form button {
+            background-color: #2575fc;
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #1b4dcc;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .service, .product {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PARZAND COMPANY</h1>
+        <p>For General Trading, IT, Cleaning, Food</p>
+        <p>Your trusted partner across multiple industries, delivering high-quality services worldwide.</p>
+    </header>
+
+    <nav>
+        <a href="#general-trading">General Trading</a>
+        <a href="#it-services">IT Services</a>
+        <a href="#cleaning-services">Cleaning Services</a>
+        <a href="#food-services">Food Services</a>
+        <a href="#products">Our Products</a>
+        <a href="#cv">My CV</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="general-trading">
+            <h2>General Trading</h2>
+            <div class="service">
+                <img src="image copy 3.png" alt="General Trading">
+                <div>
+                    <h3>Reliable Trading Services</h3>
+                    <p>At Parzand, we offer top-quality general trading services, providing a wide range of products from trusted suppliers worldwide. Whether it's for industrial, commercial, or individual needs, we meet your requirements with efficiency and excellence.</p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="it-services">
+            <h2>IT Services</h2>
+            <div class="service">
+                <img src="image copy 2.png" alt="IT Services">
+                <div>
+                    <h3>Innovative IT Solutions</h3>
+                    <p>Our IT department provides cutting-edge solutions, from software development to IT infrastructure management. We ensure businesses stay competitive and secure in an ever-evolving digital landscape.</p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cleaning-services">
+            <h2>Cleaning Services</h2>
+            <div class="service">
+                <img src="https://via.placeholder.com/600" alt="Cleaning Services">
+                <div>
+                    <h3>Comprehensive Cleaning Solutions</h3>
+                    <p>We offer a range of professional cleaning services for homes, offices, and industrial spaces. Our trained staff ensures a spotless environment with eco-friendly products and efficient techniques.</p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="food-services">
+            <h2>Food Services</h2>
+            <div class="service">
+                <img src="https://via.placeholder.com/600" alt="Food Services">
+                <div>
+                    <h3>Quality Food Products</h3>
+                    <p>Parzand is proud to offer high-quality food products, from fresh ingredients to packaged goods. We ensure the best standards for taste, safety, and nutritional value for our customers.</p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product">
+                <img src="https://via.placeholder.com/600" alt="Product 1">
+                <div>
+                    <h3>Product 1</h3>
+                    <p>Our flagship product offering high performance with unmatched quality. This is a perfect fit for both commercial and individual needs.</p>
+                    <a href="#" class="button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/600" alt="Product 2">
+                <div>
+                    <h3>Product 2</h3>
+                    <p>Designed for versatility and durability, this product guarantees great value for your investment, built to last with cutting-edge technology.</p>
+                    <a href="#" class="button">Buy Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cv">
+            <h2>
+                Our CV</h2>
+            <p><strong>Yasa Sardar Qurbani</strong></p>
+            <p>CEO of Parzand</p>
+            <p>Experienced in global trading, logistics, and product sourcing. Passionate about delivering value and excellence.</p>
+            <p>.</p>
+            <a href="your-cv-file.pdf" class="button" download>Download Our CV</a>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Parzand | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

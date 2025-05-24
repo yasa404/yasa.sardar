@@ -1,0 +1,301 @@
+
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="title">Yasa Sardar</title>
+  <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0e0e10;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: radial-gradient(circle, #1f1f2e, #0e0e10);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 2px solid #3a3a3a;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                135deg,
+                rgba(248, 0, 0, 0.05),
+                rgba(255,255,255,0.05) 1px,
+                transparent 3px,
+                transparent 30px
+            );
+            z-index: 0;
+            pointer-events: none;
+            animation: move 10s linear infinite;
+        }
+
+        @keyframes move {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+
+        header h1, header a {
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        h10 {
+            font-family: Edwardian Script ITC;
+            font-size: 1.1rem;
+            color: #ece7e6;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            opacity: 0.5;
+        }
+
+        h12 {
+            font-size: 1.2rem;
+            color: #ece7e6;
+            margin: 8px;
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background-image: linear-gradient(white, white), radial-gradient(circle at top left, #ff4b2b, #ffffff);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            box-shadow: 0 0 25px rgb(255, 255, 255);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(255, 75, 43, 0.7);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(to right, #000000, #9c0000);
+            padding: 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff5f5f;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .item {
+            background: linear-gradient(135deg, #181818, #2c2c2c);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+        }
+
+        .item:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 32px 0 rgba(255,75,43,0.25), 0 0 25px #ff4b2b;
+        }
+
+        .item p {
+            margin: 8px 0;
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        button {
+            background: #9c0000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 25px 5px;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s, background 0.3s;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        button a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background: #c40000;
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 32px 0 rgba(255,75,43,0.25), 0 0 25px #ff4b2b;
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            background: #181818;
+        }
+
+        footer p, footer a {
+            color: #bbb;
+            font-size: 1rem;
+        }
+
+        footer img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border: none;
+            background: #2c2c2c;
+            color: #fff;
+        }
+
+        h7 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #fff;
+            text-shadow: 0 0 15px #f87060;
+            font-weight: bold;
+            text-decoration: underline;
+            text-decoration-color: #f87060;
+            text-decoration-thickness: 2px;
+            display: inline-block;
+        }
+
+        select {
+            background: #2c2c2c;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 6px;
+            padding: 6px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+</head>
+<body>
+
+<header>
+  <img src="WhatsApp Image 2025-05-24 at 15.44.33_eafdfe20.jpg" alt="Yasa Sardar" class="profile-pic">
+  <h1 data-i18n="header_welcome">Welcome to Yasa Sardar's Website</h1>
+  <h10><p data-i18n="name">Yasa Sardar</p></h10>
+  <h12 data-i18n="subtitle">Software Engineer & IT Specialist - CEO of Parzand Software Company</h12>
+</header>
+
+<nav>
+  <a href="#aboutme" data-i18n="nav_about">About me</a>
+  <a href="#skills" data-i18n="nav_skills">My Skills</a>
+  <a href="#projects" data-i18n="nav_projects">My Projects</a>
+  <a href="#contact" data-i18n="nav_contact">Contact Me</a>
+</nav>
+
+<section id="aboutme">
+  <h2 data-i18n="about_title">About Me</h2>
+  <div class="item">
+    <p data-i18n="about_text">
+      My name is Yasa — a software engineer and IT specialist...
+    </p>
+  </div>
+</section>
+
+<select id="lang-switcher">
+  <option value="en">English</option>
+  <option value="kr">کوردی سۆرانی</option>
+  <option value="ar">العربية</option>
+</select>
+
+<section id="skills">
+  <h2 data-i18n="skills_title">My Skills</h2>
+  <div class="item">
+    <p data-i18n="skill_python">Python</p>
+    <p data-i18n="skill_html">HTML / CSS</p>
+    <p data-i18n="skill_sql">SQL</p>
+    <p data-i18n="skill_office">Microsoft Office (Word, PowerPoint, Access, Excel)</p>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 data-i18n="projects_title">My Projects</h2>
+  <ul>
+    <button><a href="example.html" data-i18n="proj1">Project 1: Web Application</a></button>
+    <button><a href="accounting.html" data-i18n="proj2">Project 2: Accounting System</a></button>
+    <button><a href="healthsystem.html" data-i18n="proj3">Project 3: Health System</a></button>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2 data-i18n="contact_title">Contact Me</h2>
+  <p>Email: <a href="mailto:yasasardar05@gmail.com" style="color:#ff0000;">yasasardar05@gmail.com</a></p>
+  <p>Phone: <a href="tel:+9647511136253" style="color:#d32525;">+964 751 113 6253</a></p>
+  <p>WhatsApp: <a href="https://wa.me/9647511136253" style="color:#25D366;">+964 751 113 6253</a></p>
+  <p>Telegram: <a href="https://t.me/yasa_404" style="color:#0088cc;">@yasa_404</a></p>
+</section>
+
+<script>
+  document.getElementById("lang-switcher").addEventListener("change", function () {
+    const lang = this.value;
+    fetch(`/static/lang/${lang}.json`)
+      .then(res => res.json())
+      .then(data => {
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+          const key = el.getAttribute("data-i18n");
+          if (data[key]) {
+            el.textContent = data[key];
+          }
+        });
+      });
+  });
+</script>
+
+</body>
+</html>
