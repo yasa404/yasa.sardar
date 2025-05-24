@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🩺 AI Health Checker</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Calibri', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background-size: 400% 400%;
+      animation: moveBackground 15s ease infinite;
+      color: white;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 60px 20px;
+      min-height: 100vh;
+      text-align: right;
+    }
+
+    @keyframes moveBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background: rgba(16, 37, 66, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 700px;
+      width: 100%;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.1), 0 0 60px rgba(248, 112, 96, 0.1);
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #ffffff;
+      text-shadow: 0 0 15px #f87060;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: 400;
+      color: #cccccc;
+      margin-bottom: 30px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #00fff7;
+      text-shadow: 0 0 6px #00fff7;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.2);
+      transition: 0.3s ease;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      box-shadow: 0 0 12px #f87060, 0 0 8px #00fff7;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #102542;
+      background: linear-gradient(135deg, #f87060, #00fff7);
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4), 0 0 35px rgba(248, 112, 96, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px #00fff7, 0 0 50px #f87060;
+    }
+
+    .result {
+      margin-top: 30px;
+      padding: 25px;
+      background: rgba(0, 10, 20, 0.6);
+      border-left: 4px solid #00fff7;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .result h3 {
+      color: #00fff7;
+      text-shadow: 0 0 5px #00fff7;
+      margin-bottom: 15px;
+    }
+
+    .result p {
+      margin: 10px 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8em; }
+      .container { padding: 25px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🩺پشکنینی تەندروستیت </h1>
+    <h2>تەندروستیت بپشکنە لەگەل ئێمە </h2>
+
+    <div class="input-group">
+      <label for="name">:ناو</label>
+      <input type="text" id="name" placeholder="Name" />
+    </div>
+
+    <div class="input-group">
+      <label for="age">:تەمەن</label>
+      <input type="number" id="age" placeholder="Age" />
+    </div>
+
+    <div class="input-group">
+      <label for="gender">:ڕەگەز</label>
+      <select id="gender">
+        <option value="">Select Gender</option>
+        <option value="Male">نێر</option>
+        <option value="Female">مێ</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="bp">:پەستانی دڵ</label>
+      <input type="number" id="bp" placeholder="Blood Pressure" />
+    </div>
+
+    <div class="input-group">
+      <label for="fasting">:شەکرەی پێش خواردن</label>
+      <input type="number" id="fasting" placeholder="Fasting Blood Sugar" />
+    </div>
+
+    <div class="input-group">
+      <label for="random">:شەکرەی دوای خوردن</label>
+      <input type="number" id="random" placeholder="Random Blood Sugar" />
+    </div>
+
+    <div class="input-group">
+      <label for="hr">:لێدانی دڵ</label>
+      <input type="number" id="hr" placeholder="Heart Rate" />
+    </div>
+
+    <div class="input-group">
+      <label for="temp">:پلەی گەرمی</label>
+      <input type="number" step="0.1" id="temp" placeholder="Body Temperature" />
+    </div>
+
+    <button onclick="analyzeHealth()">🔎 پشکنین بکە</button>
+
+    <div class="result" id="report"></div>
+  </div>
+
+  <script>
+    function analyzeHealth() {
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const gender = document.getElementById('gender').value;
+      
+      const bp = Number(document.getElementById('bp').value);
+      const fasting = Number(document.getElementById('fasting').value);
+      const random = Number(document.getElementById('random').value);
+      const hr = Number(document.getElementById('hr').value);
+      const temp = Number(document.getElementById('temp').value);
+  
+      let report = `<h3>📋 پشکنینی تەندروستی</h3>`;
+  
+      if (name) report += `<p><strong>👤 ناو:</strong> ${name}</p>`;
+      if (age) report += `<p><strong>🎂 تەمەن:</strong> ${age}</p>`;
+      if (gender) report += `<p><strong>🚻 ڕەگەز:</strong> ${gender}</p>`;
+  
+      // Blood Pressure
+      if (!isNaN(bp)) {
+        report += `<p><strong>🩸 پەستانی دڵ:</strong> ${bp} mmHg – `;
+        if (bp < 90) {
+          report += `کەمە 🔻</p>`;
+        } else if (bp > 120) {
+          report += `زۆرە 🔺</p>`;
+        } else {
+          report += `ئاسایی ✅</p>`;
+        }
+      }
+  
+      // Fasting Blood Sugar
+      if (!isNaN(fasting)) {
+        report += `<p><strong>🥄 شەکر پێش خواردن:</strong> ${fasting} mg/dL – `;
+        if (fasting < 70) {
+          report += `کەمە 🔻</p>`;
+        } else if (fasting > 99) {
+          report += `زۆرە 🔺</p>`;
+        } else {
+          report += `ئاسایی ✅</p>`;
+        }
+      }
+  
+      // Random Blood Sugar
+      if (!isNaN(random)) {
+        report += `<p><strong>🍬 شەکرەی دوای خواردن:</strong> ${random} mg/dL – `;
+        if (random < 70) {
+          report += `کەمە 🔻</p>`;
+        } else if (random > 140) {
+          report += `زۆرە 🔺</p>`;
+        } else {
+          report += `ئاسایی ✅</p>`;
+        }
+      }
+  
+      // Heart Rate
+      if (!isNaN(hr)) {
+        report += `<p><strong>❤️ لێدانی دڵ:</strong> ${hr} bpm – `;
+        if (hr < 60) {
+          report += `کەمە 🔻</p>`;
+        } else if (hr > 100) {
+          report += `زۆرە 🔺</p>`;
+        } else {
+          report += `ئاسایی ✅</p>`;
+        }
+      }
+  
+      // Body Temperature
+      if (!isNaN(temp)) {
+        report += `<p><strong>🌡️ پلەی گەرمی </strong> ${temp} °C – `;
+        if (temp < 36.1) {
+          report += `کەمە 🔻</p>`;
+        } else if (temp > 37.2) {
+          report += `زۆرە 🔺</p>`;
+        } else {
+          report += `ئاسایی ✅</p>`;
+        }
+      }
+  
+      // Show final result
+      document.getElementById('report').innerHTML = report;
+    }
+  </script>
+  
+</body>
+</html>
